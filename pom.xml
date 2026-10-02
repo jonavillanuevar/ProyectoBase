@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!--
+        Este POM contiene SOLO lo necesario para practicar una API REST básica.
+        Por ahora evitamos Lombok, DTOs, MapStruct, validaciones, seguridad, etc.
+        La idea es que puedas ver y escribir tú mismo la lógica fundamental.
+    -->
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>4.1.1</version>
+        <relativePath/>
+    </parent>
+
+    <groupId>com.ejemplo</groupId>
+    <artifactId>api-libros-basica</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>api-libros-basica</name>
+    <description>API REST basica para practicar CRUD con Spring Boot y JPA</description>
+
+    <properties>
+        <!-- Java 17 es suficiente para este proyecto y muy usado en Spring Boot. -->
+        <java.version>17</java.version>
+    </properties>
+
+    <dependencies>
+
+        <!-- Permite crear controladores REST: @RestController, @GetMapping, etc. -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!-- Permite trabajar con JPA, Hibernate y JpaRepository. -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+
+        <!-- Driver para conectarnos a PostgreSQL. -->
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+
+        <!-- Dependencia de pruebas que Spring Initializr suele incluir. -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
